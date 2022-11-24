@@ -1,42 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Courier";
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+  font-family: 'Patrick Hand', cursive;
 }
 
-html {
-  --collor-bg: #000;
-  --collor-header-title: #fff;
+.icons-img {
+  width: 1.4rem;
 }
 
 .header-container {
-  padding: .8rem;
-
-  background-color: #0f0c29;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-content {
-  padding: 1rem;
-  background-color: transparent;
-  border: 1px solid #fff;
-  border-radius: .5rem;
+.logo {
+  width: 12rem;
+  margin-bottom: 1rem;
+}
+
+.logo:hover {
+  transform: scale(1.1)
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.icons {
+  margin: 2rem;
+  position: absolute;
+}
+
+.gradient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, #bdc3c7, #2c3e50, #0f2027, #203a43, #2c5364, #0f0c29, #302b63, #24243e);
+  background-size: 300% 300%;
+  animation: colors 10s ease-in-out infinite;
+}
+
+
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #title {
-  color: #fd0a54;
-  font-size: 20px;
-  margin: 1rem 0 .5rem 12rem;
+  color: #fff;
+  font-size: 27px;
   white-space: nowrap;
   overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end);
+  width: 15em;
+  animation: type 2s steps(60, end);
 }
 
 span {
   animation: blink 1s infinite;
-  color: #fd0a54;
+  color: #fff;
 }
 
 @keyframes type {
@@ -51,20 +94,125 @@ span {
   }
 }
 
-.main-container {
-  background: #FFEFBA;
-  background: linear-gradient(to right, #FFFFFF, #f57576);
-  height: 80vh;
+h1 {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: white;
 }
 
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+
 footer {
+  padding-right: 1rem;
   position: absolute;
   bottom: 0;
-  background-color: #0f0c29;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   color: #FFF;
   width: 100%;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
+  height: 40px;
+  text-align: right;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+.btn {
+  width: 7rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  color: #000;
+  background: #000;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.btn:before {
+  content: '';
+  background: linear-gradient(45deg, black, grey, white, grey, black, grey, white);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn:active {
+  color: #fff
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.pulse {
+  animation: pulse 1s ease infinite;
+}
+
+.pulse:hover {
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
