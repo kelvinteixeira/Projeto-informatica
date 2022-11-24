@@ -2,7 +2,7 @@
 
 ## Sobre o projeto:
 
-Site De gerenciamento de sistemas para o empresa Fran informática, para uso internno.
+Site De gerenciamento de sistemas para a empresa Fran informática, para uso internno.
 O site se mostra em perfeito funcionamento e apenas para versão desktop.
 
 #### <div align="right">- Projeto Finalizado 🟢 <div>
