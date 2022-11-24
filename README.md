@@ -6,7 +6,6 @@ Site De gerenciamento de sistemas para o empresa Fran informática, para uso int
 O site se mostra em perfeito funcionamento e apenas para versão desktop.
 
 #### <div align="right">- Projeto Finalizado 🟢 <div>
-#### <div align="right"> https://bsadvogados.netlify.app/<div>
 
 ## Tecnologias usadas:
 
